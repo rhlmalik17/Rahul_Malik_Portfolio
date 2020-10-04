@@ -1,4 +1,11 @@
 :root{
     --light-blue : #04C3FF;
+    --light-blue-shadow:  rgba(4, 195, 255,0.27);
     --sea-green: #0ABEAD;
+    --sea-green-dark: #0CBFAE;
+    --sea-green-extra-dark: #09BEAD;
+    --sea-green-shadow: rgba(11, 190, 173,0.4);
+    --orange: #F57F17;
+    --orange-shadow: rgba(245, 127, 23,0.2);
+    --white: #ffffff;
 }

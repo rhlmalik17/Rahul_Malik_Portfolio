@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { TOTAL_SCREENS } from '../../utilities/commonUtils';
+import { TOTAL_SCREENS } from '../../../utilities/commonUtils';
 import './Header.css';
-export const Header = () => {
+
+const Header = () => {
 
     const [selectedScreen, setSelectedScreen] = useState(0);
     const getHeaderOptions = () => {
         return (
           TOTAL_SCREENS.map((Screen,i) => (
-            <div className={getHeaderOptionsClasses(i)}
+            <div key={Screen.screen_name} className={getHeaderOptionsClasses(i)}
                 onClick={() => switchScreen(i)}
             >
                  <span>{Screen.screen_name}</span>
@@ -44,3 +45,5 @@ export const Header = () => {
         </div>
     )
 }
+
+export default Header;
