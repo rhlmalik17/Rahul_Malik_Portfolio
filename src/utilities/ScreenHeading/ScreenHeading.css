@@ -9,6 +9,7 @@
     letter-spacing: 3px;
     margin: 8px 0 18px 0;
     font-size: 14px;
+    color: var(--black);
 }
 
 .screen-heading{

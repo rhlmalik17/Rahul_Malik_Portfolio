@@ -6,6 +6,9 @@
     --sea-green-extra-dark: #09BEAD;
     --sea-green-shadow: rgba(11, 190, 173,0.4);
     --orange: #F57F17;
+    --dark-orange: #FF5823;
     --orange-shadow: rgba(245, 127, 23,0.2);
     --white: #ffffff;
+    --black: #333333;
+    --error-message:  #e44f4fd1;
 }
