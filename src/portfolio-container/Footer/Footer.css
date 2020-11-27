@@ -1,0 +1,33 @@
+.main-footer-container{
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    max-width: 1920px;
+}
+
+.main-footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
+.main-footer-message{
+    font-size: 15px;
+    font-family: 'Poppins Bold';
+    color: var(--black);
+    letter-spacing: 4px;
+}
+
+.social-icon{
+    font-size: 36px;
+    cursor: pointer;
+    margin: 0px 10px;
+    color: var(--black);
+}
+
+.social-icon:hover{
+    color: var(--sea-green);
+}

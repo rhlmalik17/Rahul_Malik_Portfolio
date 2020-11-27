@@ -29,8 +29,8 @@ const AboutMe = () => {
     }
 
     return (
-        <div className="about-me-container">
-            <ScreenHeading title={'About Me'}/>
+        <div className="about-me-container screen-container">
+            <ScreenHeading title={'About Me'} subHeading={'Why Choose Me?'} />
             <div className="about-me-card">
                 <div className="about-me-profile">
                     <img alt="Profile Not found"/>
