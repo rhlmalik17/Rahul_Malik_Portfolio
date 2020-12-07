@@ -31,3 +31,10 @@
 .social-icon:hover{
     color: var(--sea-green);
 }
+
+/* IPAD PRO RESPONSIVENESS */
+@media only screen and (max-width: 1110px) {
+    .main-footer-content{
+        width: 75%;
+    }
+}

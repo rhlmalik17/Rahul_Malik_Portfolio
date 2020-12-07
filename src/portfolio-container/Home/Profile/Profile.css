@@ -4,7 +4,6 @@
     justify-content: center;
     height: 60%;
     min-height: fit-content;
-    padding: 50px 0;
 }
 
 .profile-parent{
@@ -48,7 +47,14 @@
 .profile-picture{
     box-shadow: 0 0px 40px 0px var(--light-blue-shadow);
     border-radius: 50%;
-    height: 420px;
-    width: 420px;
+    height: 380px;
+    width: 380px;
     margin: 0 0px 0 100px;
+}
+
+/* IPAD PRO RESPONSIVENESS */
+@media only screen and (max-width: 1110px) {
+    .profile-picture {
+        margin: 0 0px 0 80px;
+    }
 }

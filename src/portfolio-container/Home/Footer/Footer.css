@@ -15,3 +15,11 @@
 .footer-parent img{
     max-width: 100%;
 }
+
+/* IPAD PRO RESPONSIVENESS */
+@media only screen and (max-width: 1110px) {
+    .footer-parent{
+        display: flex;
+        align-items: flex-end;
+    }
+}

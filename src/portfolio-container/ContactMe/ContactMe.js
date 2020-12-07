@@ -30,7 +30,7 @@ const ContactMe = (props) => {
                         <input type="text" placeholder={textFieldOptions.subject.placeholder} ref={register(textFieldOptions.subject.validations)} name={textFieldOptions.subject.name} className={`text-field ${ errors[textFieldOptions.subject.name] ? 'red-border' : ''}`} />
                         { errors[textFieldOptions.subject.name] && <div className="text-field-error"> <div className="error-pointer"></div> <span> { errors[textFieldOptions.subject.name].message }</span> </div> }
                 </div>
-                <div className="text-field-container">
+                <div className="text-field-container text-area-container">
                         <textarea placeholder={textFieldOptions.your_message.placeholder} ref={register(textFieldOptions.your_message.validations)} name={textFieldOptions.your_message.name} className={`text-field text-field-area ${ errors[textFieldOptions.your_message.name] ? 'red-border' : ''}`}></textarea>
                         { errors[textFieldOptions.your_message.name] && <div className="text-field-error"> <div className="error-pointer"></div> <span> { errors[textFieldOptions.your_message.name].message }</span> </div> }
                 </div>

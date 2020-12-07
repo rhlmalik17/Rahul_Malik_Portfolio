@@ -98,3 +98,8 @@ code {
 .red-border {
   border: 1px solid var(--error-message) !important;
 }
+
+ .screen-container{
+  height: 100vh !important;
+  min-height: 768px;
+} 

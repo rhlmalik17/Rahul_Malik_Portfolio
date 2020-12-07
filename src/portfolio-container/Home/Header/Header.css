@@ -10,11 +10,11 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    min-width: 50%;
+    width: 70%;
 }
 
 .header-logo{
-    font-size: 70px;
+    font-size: 50px;
     font-family: 'Poppins ExtraBold';
     color: var(--sea-green);
 }
@@ -30,10 +30,71 @@
     font-weight: 600;
 }
 
+.header-hamburger {
+    display: none;
+}
+
 .header-option-seperator{
     margin: 0 50px 0 0;
 }
 
 .selected-header-option{
     color: var(--sea-green);
+}
+
+/* IPAD PRO RESPONSIVENESS */
+@media only screen and (max-width: 1110px) {
+    .header-parent {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+
+    .header-hamburger {
+        display: block;
+    }
+
+    .header-parent {
+        width: 100%;
+        padding: 0 40px;
+        position: relative;
+    }
+    .header-options {
+        display: flex;
+        opacity: 0;
+        flex-direction: column;
+        position: absolute;
+        left: -50%;
+        transition: all 1s ease-out;
+        top: 140px;
+        height: 86vh;
+        width: 50%;
+        justify-content: space-around;
+        background-color: var(--header-hamburger-background);
+    }
+
+    .header-option-seperator {
+        margin: 0;
+    }
+
+    .selected-header-option {
+        color: var(--white);
+    }
+    
+    .header-option {
+        color: var(--white);
+    }
+
+    .header-hamburger-bars {
+    font-size: 36px;
+    cursor: pointer;
+    margin: 0px 10px;
+    color: var(--black);
+    }
+
+    .show-hamburger-options {
+        left: 0;
+        opacity: 1;
+    }
 }

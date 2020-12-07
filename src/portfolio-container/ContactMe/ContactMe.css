@@ -102,3 +102,48 @@
         opacity: 1;
     }
 }
+
+/* IPAD PRO RESPONSIVENESS */
+@media only screen and (max-width: 1110px) {
+
+    .contact-me-form {
+        margin: 0;
+    }
+
+    .contact-me-map {
+        justify-content: center;
+    }
+    
+    .text-field-error {
+        width: 58%;
+        left: -70%;
+    }
+}
+
+/* IPAD RESPONSIVENESS */
+@media only screen and (max-width: 768px) and (min-width: 540px) {
+    .contact-me-map{
+        margin: 40px 0;
+        background-image: none;
+        height: fit-content;
+    }
+
+    .text-field-error {
+        height: fit-content;
+        width: fit-content;
+        top: 60%;
+        left: -5%;
+        font-size: 12px;
+        background-color: transparent;
+        color: var(--error-message)
+    }
+
+    .text-area-container .text-field-error {
+        top: 80%;
+    }
+
+    .error-pointer {
+        display: none;
+    }
+
+}

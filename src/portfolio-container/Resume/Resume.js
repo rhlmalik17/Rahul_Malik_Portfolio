@@ -132,7 +132,7 @@ const Resume = () => {
       return (
       <div style={carousalOffsetStyle.style} className="resume-details-carousal">
         {
-       resumeDetails.map((ResumeDetail) => (
+      resumeDetails.map((ResumeDetail) => (
           ResumeDetail          
         ))
         }
