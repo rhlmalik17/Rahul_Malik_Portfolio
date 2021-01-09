@@ -19,6 +19,10 @@
 
 .about-me-profile{
     width: 50%;
+    background-image: url('../../assets/AboutMe/about-me-picture.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .about-me-details{

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { TOTAL_SCREENS } from '../../../utilities/commonUtils';
-import { faBars } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Header.css';
+// import { faBars } from "@fortawesome/free-solid-svg-icons"
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Header = () => {
 
