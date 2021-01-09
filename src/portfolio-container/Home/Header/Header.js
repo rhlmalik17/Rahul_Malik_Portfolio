@@ -41,9 +41,9 @@ const Header = () => {
     return (
         <div className="header-container">
             <div className="header-parent">
-                <div className="header-hamburger" onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
+                {/* <div className="header-hamburger" onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
                     <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
-                </div>
+                </div> */}
                 <div className="header-logo">
                     <span>RM.</span>
                 </div>

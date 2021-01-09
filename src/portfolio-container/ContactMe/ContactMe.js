@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading'
+import Footer from '../Footer/Footer';
 import './ContactMe.css'
 
 const ContactMe = (props) => {
@@ -47,6 +48,7 @@ const ContactMe = (props) => {
     return (
         <div className="contact-me-container">
             <ScreenHeading subHeading={ "Let's Keep In Touch"} title={ (props.screenName) ? props.screenName : '' } />
+            <div>
             <div className="contact-me-map">
                 <div className="contact-me-form">
                     <div className="contact-form-heading">
@@ -59,6 +61,8 @@ const ContactMe = (props) => {
                         <button className={'contact-me-submit-btn primary-btn'} type="submit">Submit</button>
                     </form>
                 </div>
+            </div>
+            <Footer />
             </div>
         </div>
     )

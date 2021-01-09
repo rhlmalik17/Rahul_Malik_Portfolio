@@ -48,9 +48,9 @@ const Resume = () => {
     /* EDUCATION */ 
     (
       <div className="resume-screen-container" key="education">
-        <ResumeHeading heading={'Shivalik Public School'} subHeading={'10th C.B.S.E'} fromDate={'2014'} toDate={'2015'} />
-        <ResumeHeading heading={'Chandigarh College of Engineering & Technology'} subHeading={'DIPLOMA IN ELECTRONICS AND COMMUNICATION'} fromDate={'2015'} toDate={'2018'} />
         <ResumeHeading heading={'Chitkara University'} subHeading={'BACHELOR OF ENGINEERING, MAJOR IN COMPUTER SCIENCE'} fromDate={'2018'} toDate={'2021'} />
+        <ResumeHeading heading={'Chandigarh College of Engineering & Technology'} subHeading={'DIPLOMA IN ELECTRONICS AND COMMUNICATION'} fromDate={'2015'} toDate={'2018'} />
+        <ResumeHeading heading={'Shivalik Public School'} subHeading={'10th C.B.S.E'} fromDate={'2014'} toDate={'2015'} />
       </div>
     ),
     /* WORK EXPERIENCE */
@@ -132,7 +132,7 @@ const Resume = () => {
       return (
       <div style={carousalOffsetStyle.style} className="resume-details-carousal">
         {
-      resumeDetails.map((ResumeDetail) => (
+        resumeDetails.map((ResumeDetail) => (
           ResumeDetail          
         ))
         }
@@ -143,13 +143,15 @@ const Resume = () => {
     
 
     return (
-        <div className="resume-container"> 
-           <ScreenHeading title={'Resume'} subHeading={'My formal Bio Details'} />
+        <div className="resume-container screen-container"> 
 
+           <div className="resume-content">
+           <ScreenHeading title={'Resume'} subHeading={'My formal Bio Details'} />
            <div className="resume-card">
   
                 <div className="resume-bullets">
                     <div className="bullet-container">
+                      <div className="bullet-icons"></div>
                       <div className="bullets">
                        
                        { getBullets() }
@@ -163,6 +165,7 @@ const Resume = () => {
                   {  getResumeScreens()  }
 
                 </div>
+           </div>
            </div>
         </div>
     )

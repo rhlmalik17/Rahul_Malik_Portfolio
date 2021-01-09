@@ -5,9 +5,9 @@
    height: 800px;
    width: 100%;
    position: relative;
-   margin: 50px 0 0 0;
    background-image: url('../../assets/ContactMe/address-map.png');
    background-repeat: no-repeat;
+   background-position-x: center;
 }
 
 .contact-me-form {
@@ -29,17 +29,18 @@
 .form-field-container {
     display: flex;
     flex-direction: column;
-    margin: 28px 0 0 0;
+    margin: 18px 0 0 0;
 }
 
 .text-field {
     border: none;
-    padding: 15px 18px;
+    padding: 10px 24px;
     border-radius: 10px;
-    margin: 0 0 28px 0;
+    margin: 0 0 18px 0;
     width: 90%;
-    font-size: 14px;
-    box-shadow: 0 0 55px var(--light-blue-shadow);
+    font-size: 13px;
+    font-family: 'Poppins Light';
+    box-shadow: 0 0 30px var(--light-blue-shadow);
 }
 
 .text-field-area {
@@ -81,12 +82,12 @@
     right: -5px;
 }
 
-.contact-me-submit-btn{
+.contact-me-submit-btn {
     border-radius: 50px;
     box-shadow: none !important;
     padding: 10px 0;
     width: 100%;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     margin: 0 0 18px 0;
     font-family: 'Poppins SemiBold';
@@ -100,6 +101,13 @@
     100% {
         transform: translateX(0px);
         opacity: 1;
+    }
+}
+
+/* STANDARD SCREEN RESPONSIVENESS */
+@media only screen and (max-width: 1366px) {
+    .contact-me-map {
+        height: 700px;
     }
 }
 
@@ -120,30 +128,33 @@
     }
 }
 
-/* IPAD RESPONSIVENESS */
-@media only screen and (max-width: 768px) and (min-width: 540px) {
-    .contact-me-map{
-        margin: 40px 0;
-        background-image: none;
-        height: fit-content;
-    }
-
+/* IPAD PRO RESPONSIVENESS */
+@media only screen and (max-width: 1024px) {
     .text-field-error {
         height: fit-content;
         width: fit-content;
-        top: 60%;
+        top: 64%;
         left: -5%;
         font-size: 12px;
+        white-space: nowrap;
         background-color: transparent;
         color: var(--error-message)
     }
 
     .text-area-container .text-field-error {
-        top: 80%;
+        top: 84%;
     }
 
     .error-pointer {
         display: none;
     }
+}
 
+/* IPAD RESPONSIVENESS */
+@media only screen and (max-width: 768px) {
+    .contact-me-map{
+        margin: 40px 0;
+        background-image: none;
+        height: fit-content;
+    }
 }

@@ -21,7 +21,9 @@ const ScreenHeading = (props) => {
 
            <div className="heading-seperator">
               <div className="seperator-line"></div>
-              <div className="seperator-blob"></div>
+              <div className="seperator-blob">
+                  <div></div>
+              </div>
            </div>
         </div>
     )

@@ -1,16 +1,19 @@
-.about-me-container{
-    height: fit-content;
-    padding: 70px 0 40px 0;
+.about-me-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 50px 0 0 0;
+}
+
+.about-me-parent{
+    max-width: 1000px;
+    width: 70%;
 }
 
 .about-me-card{
     display: flex;
-    width: 1100px;
-    margin: 80px 0 0 0;
+    width: 100%;
     box-shadow: 0 0px 50px -5px var(--light-blue-shadow);
 }
 
@@ -20,11 +23,12 @@
 
 .about-me-details{
     width: 48%;
-    padding: 50px 40px;
+    text-align: justify;
+    padding: 30px;
 }
 
 .about-me-description{
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .about-me-highlights{
@@ -34,7 +38,7 @@
 .highlight-heading{
     color: var(--sea-green);
     font-family: 'Poppins Bold';
-    font-size: 16px;
+    font-size: 14px;
     margin: 0 0 5px 0;
 }
 
@@ -42,12 +46,12 @@
     display: flex;
     align-items: center;
     margin: 5px 0;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .highlight-blob{
-    height: 14px;
-    width: 14px;
+    height: 12px;
+    width: 12px;
     margin: 0 10px 0 0;
     border-radius: 50%;
     background-color: var(--orange);
@@ -57,24 +61,38 @@
     margin: 0 0 0 30px
 }
 
-
 /* IPAD PRO RESPONSIVENESS */
 @media only screen and (max-width: 1110px) {
-    .about-me-card{
-        width: 85%;
+    .about-me-parent{
+        width: 88%;
     }
 }
 
-/* IPAD RESPONSIVENESS */
-@media only screen and (max-width: 768px) and (min-width: 540px) {
-    .about-me-card {
-        width: 96%;
-    }
-    .about-me-details{
-        padding: 40px 20px;
+
+/* MOBILE RESPONSIVENESS */
+@media only screen and (max-width: 885px) {
+    .about-me-profile {
+        display: none;
     }
 
+    .about-me-details {
+        width: 100%;
+    }
+}
+
+
+/* MOBILE RESPONSIVENESS */
+@media only screen and (max-width: 466px) {
     .about-me-options {
         display: flex;
+        flex-direction: column;
+    }
+
+    .about-me-options .highlighted-btn {
+        margin: 24px 0 0 0 !important;
+    }
+
+    .about-me-options button {
+        width: 100%;
     }
 }

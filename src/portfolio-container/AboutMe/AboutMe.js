@@ -29,7 +29,8 @@ const AboutMe = () => {
     }
 
     return (
-        <div className="about-me-container">
+        <div className="about-me-container screen-container">
+            <div className="about-me-parent">
             <ScreenHeading title={'About Me'} subHeading={'Why Choose Me?'} />
             <div className="about-me-card">
                 <div className="about-me-profile">
@@ -47,6 +48,7 @@ const AboutMe = () => {
                          <button className="btn primary-btn"> Hire Me </button>
                          <button className="btn highlighted-btn"> Get Resume </button>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
