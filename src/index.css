@@ -47,11 +47,6 @@
   src: local('Poppins'), url('./assets/fonts/Poppins-Thin.ttf') format('ttf');
 }
 
-#root {
-  display: flex;
-  justify-content: center;
-}
-
 * {
   outline: none;
 }
