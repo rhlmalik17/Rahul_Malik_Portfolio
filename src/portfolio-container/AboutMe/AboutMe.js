@@ -1,8 +1,9 @@
 import React from 'react'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
+import { SCROLL_TO_HIRE_ME } from '../../utilities/commonUtils'
 import './AboutMe.css';
 
-const AboutMe = () => {
+const AboutMe = (props) => {
     
     const SCREEN_CONSTANTS = { 
         description: "Full stack developer with background knowledge of MEAN/MERN stacks along with a knack of building applications with utmost efficiency. Strong professional with a B.E willing to be an asset for an organization while aligning my interest to establish a career in IT and meet the Industry standards.",
@@ -29,7 +30,7 @@ const AboutMe = () => {
     }
 
     return (
-        <div className="about-me-container screen-container">
+        <div className="about-me-container screen-container" id={ props.id || ''}>
             <div className="about-me-parent">
             <ScreenHeading title={'About Me'} subHeading={'Why Choose Me?'} />
             <div className="about-me-card">
@@ -43,8 +44,10 @@ const AboutMe = () => {
                         { renderHighlights() }
                     </div>
                     <div className="about-me-options">
-                         <button className="btn primary-btn"> Hire Me </button>
-                         <button className="btn highlighted-btn"> Get Resume </button>
+                         <button className="btn primary-btn" onClick={() => SCROLL_TO_HIRE_ME()}> Hire Me </button>
+                         <a href="resume.pdf" download="Rahul Malik.pdf">
+                            <button className="btn highlighted-btn"> Get Resume </button>
+                         </a>
                     </div>
                 </div>
                 </div>

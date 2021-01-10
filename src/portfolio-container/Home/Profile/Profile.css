@@ -44,12 +44,21 @@
     margin: 0 0 0 28px;
 }
 
-.profile-picture{
+.profile-picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: 0 0px 40px 0px var(--light-blue-shadow);
     border-radius: 50%;
     height: 380px;
     width: 380px;
     margin: 0 0px 0 100px;
+}
+
+.profile-picture-background {
+    height: 92%;
+    width: 92%;
+    border-radius: 50%;
     background-image: url('../../../assets/Home/profile-picture.jpg');
     background-size: cover;
     background-repeat: no-repeat;

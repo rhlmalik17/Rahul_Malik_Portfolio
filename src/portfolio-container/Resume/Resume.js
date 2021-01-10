@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading'
 import './Resume.css'
 
-const Resume = () => {
+const Resume = (props) => {
     /* STATES */
     const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
     const [carousalOffsetStyle, setCarousalOffsetStyle] = useState({});
@@ -41,8 +41,8 @@ const Resume = () => {
                                       { skill: "Core Java", ratingPercentage: 80 }];
 
   const projectsDetails = [ { title: 'Personal Portfolio Website', duration: { fromDate : '2020', toDate: '2020' }, description: 'A Personal Portfolio website to showcase all my details and projects at one place.', subHeading: 'Technologies Used: MERN STACK' },
-                            { title: 'Converse', duration: { fromDate : '2020', toDate: '2020' }, description: 'A messaging platform utilizing the functionality of Sockets I/O through REST API to provide realtime messaging experience.', subHeading: 'Technologies Used: Angular JS, Express JS, Socket IO & FireBase Realtime Database.' },
-                            { title: 'Zoom Clone', duration: { fromDate : '2020', toDate: '2020' }, description: "Developed Zoom alike project covering it's main key features including users having a live group video call session and basic realtime messaging.", subHeading: 'Technologies Used: Angular JS, Express JS, Socket IO & FireBase Realtime Database.' } ]
+                            { title: 'Mayberry Client Portal', duration: { fromDate : '2020', toDate: '2020' }, description: "An investment platform designed to take in equity and cambio orders from it's users along with the statistics of their shares, market and their application status.", subHeading: 'Technologies Used: Angular JS, TypeScript, SQL & PHP.' },                          
+                            { title: 'Converse (Currently Ongoing)', duration: { fromDate : '2020', toDate: '2020' }, description: 'A messaging platform utilizing the functionality of Sockets I/O through REST API to provide realtime messaging experience.', subHeading: 'Technologies Used: Angular JS, Express JS, Socket IO & FireBase Realtime Database.' } ];
 
    const resumeDetails = [
     /* EDUCATION */ 
@@ -143,7 +143,7 @@ const Resume = () => {
     
 
     return (
-        <div className="resume-container screen-container"> 
+        <div className="resume-container screen-container" id={ props.id || ''}> 
 
            <div className="resume-content">
            <ScreenHeading title={'Resume'} subHeading={'My formal Bio Details'} />

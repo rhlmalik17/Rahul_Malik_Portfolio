@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { TOTAL_SCREENS } from '../../../utilities/commonUtils';
 import './Header.css';
-// import { faBars } from "@fortawesome/free-solid-svg-icons"
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Header = () => {
 
@@ -14,7 +14,7 @@ const Header = () => {
         return (
           TOTAL_SCREENS.map((Screen,i) => (
             <div key={Screen.screen_name} className={getHeaderOptionsClasses(i)}
-                onClick={() => switchScreen(i)}
+                onClick={() => switchScreen(i,Screen)}
             >
                  <span>{Screen.screen_name}</span>
             </div>
@@ -33,7 +33,12 @@ const Header = () => {
         return classes;
     }
 
-    const switchScreen = (index) => {
+    const switchScreen = (index, screen) => {
+        let screenComponent = document.getElementById(screen.screen_name);
+        if(!screenComponent)
+        return;
+
+        screenComponent.scrollIntoView({ behavior: 'smooth' });
         setSelectedScreen(index);
         setShowHeaderOptions(false);
     }
@@ -41,9 +46,9 @@ const Header = () => {
     return (
         <div className="header-container">
             <div className="header-parent">
-                {/* <div className="header-hamburger" onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
+                <div className="header-hamburger" onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
                     <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
-                </div> */}
+                </div>
                 <div className="header-logo">
                     <span>RM.</span>
                 </div>

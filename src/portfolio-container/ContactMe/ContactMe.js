@@ -46,7 +46,7 @@ const ContactMe = (props) => {
     
 
     return (
-        <div className="contact-me-container">
+        <div className="contact-me-container" id={ props.id || ''}>
             <ScreenHeading subHeading={ "Let's Keep In Touch"} title={ (props.screenName) ? props.screenName : '' } />
             <div>
             <div className="contact-me-map">
