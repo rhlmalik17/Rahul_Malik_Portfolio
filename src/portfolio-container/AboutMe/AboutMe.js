@@ -1,11 +1,17 @@
 import React from 'react'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
 import ScrollService from '../../utilities/ScrollService';
+import Animations from '../../utilities/Animations';
 
 import './AboutMe.css';
 
 const AboutMe = (props) => {
-    
+
+    let fadeInScreenHandler = () => {
+        Animations.animations.fadeInScreen(props.id);
+    }
+    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+
     const SCREEN_CONSTANTS = { 
         description: "Full stack developer with background knowledge of MEAN/MERN stacks along with a knack of building applications with utmost efficiency. Strong professional with a B.E willing to be an asset for an organization while aligning my interest to establish a career in IT and meet the Industry standards.",
         highlights: {
@@ -31,7 +37,7 @@ const AboutMe = (props) => {
     }
 
     return (
-        <div className="about-me-container screen-container" id={ props.id || ''}>
+        <div className="about-me-container screen-container fade-in" id={ props.id || ''}>
             <div className="about-me-parent">
             <ScreenHeading title={'About Me'} subHeading={'Why Choose Me?'} />
             <div className="about-me-card">

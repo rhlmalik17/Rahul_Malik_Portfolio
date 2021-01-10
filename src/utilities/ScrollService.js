@@ -6,8 +6,9 @@ export default class ScrollService {
   /* SINGLETON CLASS INSTANCE */
   static scrollHandler = new ScrollService();
 
-  /* CURRENT SCREEN BROADCASTER */
+  /* BROADCASTERS */
   static currentScreenBroadcaster = new Subject();
+  static currentScreenFadeIn = new Subject();
 
   constructor() {
     /* ADD SCROLL EVENT TO WINDOW */
@@ -56,12 +57,26 @@ export default class ScrollService {
       if(!screenFromDOM)
       continue;
 
-      if(this.isElementInView(screenFromDOM, "complete")) {
-        // BROADCAST SCREEN NAME
-        ScrollService.currentScreenBroadcaster.next({
-          screenInView: screen.screen_name
-        });
-        break;
+      let fullyVisible = this.isElementInView(screenFromDOM, "complete");
+      let partiallyVisible = this.isElementInView(screenFromDOM, "partial");
+
+      if(fullyVisible || partiallyVisible) {
+        if(partiallyVisible && !screen.alreadyRendered){
+          //BROADCAST FADE IN EFFECT
+          ScrollService.currentScreenFadeIn.next({
+            fadeInScreen: screen.screen_name
+          });
+          screen['alreadyRendered'] = true;
+          break;
+        }
+
+        if (fullyVisible) {
+          // BROADCAST SCREEN NAME
+          ScrollService.currentScreenBroadcaster.next({
+            screenInView: screen.screen_name
+          });
+          break;
+        }
       }
     }
   }

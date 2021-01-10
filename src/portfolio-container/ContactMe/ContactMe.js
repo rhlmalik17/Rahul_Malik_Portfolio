@@ -2,12 +2,19 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading'
 import Footer from '../Footer/Footer';
+import ScrollService from '../../utilities/ScrollService';
+import Animations from '../../utilities/Animations';
 import './ContactMe.css'
 
 const ContactMe = (props) => {
     
     /* HOOKS TO BE USED */
     const { register, handleSubmit, errors } = useForm();
+
+    let fadeInScreenHandler = () => {
+      Animations.animations.fadeInScreen(props.id);
+    };
+    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
     const getFormFields = () => {
         /*
@@ -46,7 +53,7 @@ const ContactMe = (props) => {
     
 
     return (
-        <div className="contact-me-container" id={ props.id || ''}>
+        <div className="contact-me-container fade-in" id={ props.id || ''}>
             <ScreenHeading subHeading={ "Let's Keep In Touch"} title={ (props.screenName) ? props.screenName : '' } />
             <div>
             <div className="contact-me-map">
