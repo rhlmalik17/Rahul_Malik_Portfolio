@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
 import ScrollService from '../../utilities/ScrollService';
 import Animations from '../../utilities/Animations';
@@ -7,7 +7,10 @@ import './AboutMe.css';
 
 const AboutMe = (props) => {
 
-    let fadeInScreenHandler = () => {
+    let fadeInScreenHandler = (screen) => {
+        if(screen.fadeInScreen !== props.id)
+        return;
+
         Animations.animations.fadeInScreen(props.id);
     }
     const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
@@ -35,6 +38,13 @@ const AboutMe = (props) => {
             ))
         )
     }
+
+    useEffect(() => {
+        return () => {
+            /* UNSUBSCRIBE THE SUBSCRIPTIONS */
+            fadeInSubscription.unsubscribe();
+        }
+    }, [fadeInSubscription]);
 
     return (
         <div className="about-me-container screen-container fade-in" id={ props.id || ''}>

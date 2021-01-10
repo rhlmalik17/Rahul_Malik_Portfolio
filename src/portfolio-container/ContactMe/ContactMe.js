@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading'
 import Footer from '../Footer/Footer';
@@ -11,8 +11,11 @@ const ContactMe = (props) => {
     /* HOOKS TO BE USED */
     const { register, handleSubmit, errors } = useForm();
 
-    let fadeInScreenHandler = () => {
-      Animations.animations.fadeInScreen(props.id);
+    let fadeInScreenHandler = (screen) => {
+    if(screen.fadeInScreen !== props.id)
+    return;
+
+    Animations.animations.fadeInScreen(props.id);
     };
     const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
@@ -50,7 +53,12 @@ const ContactMe = (props) => {
         console.log((data));
     }
 
-    
+    useEffect(() => {
+        return () => {
+            /* UNSUBSCRIBE THE SUBSCRIPTIONS */
+            fadeInSubscription.unsubscribe();
+        }
+    }, [fadeInSubscription]);
 
     return (
         <div className="contact-me-container fade-in" id={ props.id || ''}>
