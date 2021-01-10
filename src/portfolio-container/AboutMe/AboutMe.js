@@ -1,6 +1,7 @@
 import React from 'react'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
-import { SCROLL_TO_HIRE_ME } from '../../utilities/commonUtils'
+import ScrollService from '../../utilities/ScrollService';
+
 import './AboutMe.css';
 
 const AboutMe = (props) => {
@@ -44,7 +45,7 @@ const AboutMe = (props) => {
                         { renderHighlights() }
                     </div>
                     <div className="about-me-options">
-                         <button className="btn primary-btn" onClick={() => SCROLL_TO_HIRE_ME()}> Hire Me </button>
+                         <button className="btn primary-btn" onClick={() => ScrollService.scrollHandler.scrollToHireMe()}> Hire Me </button>
                          <a href="resume.pdf" download="Rahul Malik.pdf">
                             <button className="btn highlighted-btn"> Get Resume </button>
                          </a>

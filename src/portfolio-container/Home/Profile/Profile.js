@@ -1,5 +1,5 @@
 import React from 'react'
-import { SCROLL_TO_HIRE_ME } from '.././../../utilities/commonUtils'
+import ScrollService from '.././../../utilities/ScrollService'
 import './Profile.css';
 
 const Profile = () => {
@@ -15,7 +15,7 @@ const Profile = () => {
                       <span className="profile-role-tagline">Knack of building applications with front and back end operations.</span>
                   </div>
                   <div className="profile-options">
-                    <button className="btn primary-btn" onClick={() => SCROLL_TO_HIRE_ME()}> Hire Me </button>
+                    <button className="btn primary-btn" onClick={() => ScrollService.scrollHandler.scrollToHireMe()}> Hire Me </button>
                     <a href="resume.pdf" download="Rahul Malik.pdf">
                         <button className="btn highlighted-btn"> Get Resume </button>
                     </a> 

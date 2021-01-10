@@ -12,26 +12,15 @@ export const TOTAL_SCREENS = [
     { screen_name: "Contact Me", component: ContactMe }
 ];
 
-/* SCROLL TO HIRE ME / CONTACT ME SCREEN */
-export const SCROLL_TO_HIRE_ME = () => {
-    let contactMeScreen = document.getElementById('Contact Me');
-    if(!contactMeScreen)
-    return;
+/* GET SCREEN INDEX */
+export const GET_SCREEN_INDEX = (screen_name) => {
+    if(!screen_name)
+    return -1;
 
-    contactMeScreen.scrollIntoView({ behavior: 'smooth' });
-}
+    for(let i = 0;i < TOTAL_SCREENS.length;i++){
+        if(TOTAL_SCREENS[i].screen_name === screen_name)
+        return i;
+    }
 
-/* CHECK IF ELEMENT IS IN VIEW */
-export const IS_ELEMENT_IN_VIEW = (elem) => {
-    let rec = elem.getBoundingClientRect();
-    let elementTop = rec.top;
-    let elemBottom = rec.bottom;
-
-    /* Partially Visible */
-    let isVisible = elementTop < window.innerHeight && elemBottom >= 0;
-
-    /* Completely Visible
-        isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
-    */
-    return isVisible;
+    return -1;
 }
