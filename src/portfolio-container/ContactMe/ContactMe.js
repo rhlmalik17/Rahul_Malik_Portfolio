@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading'
 import Footer from '../Footer/Footer';
 import ScrollService from '../../utilities/ScrollService';
 import Animations from '../../utilities/Animations';
+import * as httpClient from '../../services/api-services/common-service';
+import { apiUrls } from '../../services/api-services/api-urls';
 import './ContactMe.css'
 
 const ContactMe = (props) => {
-    
+
     /* HOOKS TO BE USED */
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, reset, errors } = useForm();
+    const [disabledSubmitButton, setDisabledSubmitButton] = useState(false);
 
     let fadeInScreenHandler = (screen) => {
     if(screen.fadeInScreen !== props.id)
@@ -47,10 +50,19 @@ const ContactMe = (props) => {
                 </div>
             </div>
         )
-    }  
+    } 
+
 
     const handleFormSubmission = (data) => {
-        console.log((data));
+        setDisabledSubmitButton(true);
+        httpClient.default.postRequest(apiUrls['contact-me'], data)
+        .then((result) => {
+            setDisabledSubmitButton(false);
+            reset();
+        })
+        .catch((err) => {
+            setDisabledSubmitButton(false);
+        });
     }
 
     useEffect(() => {
@@ -73,7 +85,9 @@ const ContactMe = (props) => {
 
                         { getFormFields() }
 
-                        <button className={'contact-me-submit-btn primary-btn'} type="submit">Submit</button>
+                        <button disabled={disabledSubmitButton} 
+                        className={'contact-me-submit-btn primary-btn' + (disabledSubmitButton ? ' disable-submit-btn' : '')} 
+                        type="submit">Submit</button>
                     </form>
                 </div>
             </div>
