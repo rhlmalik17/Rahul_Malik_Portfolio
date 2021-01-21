@@ -1,5 +1,5 @@
 //CONSTANTS
-export const BASE_URL = "http://www.localhost:8080/";
+export const BASE_URL = "https://rahul-malik-portfolio.herokuapp.com/";
 
 export const apiUrls = {
     "contact-me": "contact-me"
