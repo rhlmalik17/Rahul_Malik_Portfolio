@@ -3,5 +3,5 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100vh !important;
-  min-height: fit-content;
+    min-height: 806px;
 }
