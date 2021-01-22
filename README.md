@@ -1,6 +1,6 @@
 # Portfolio Website
 
-An interactive portfolio website that showcase my basic information and my major area of professional skills:
+An interactive portfolio website built with MERN Technology stack that showcases my basic information and all of my major area of professional skills:
 
 ## Deployed at: 
 https://rahul-malik.netlify.app/
