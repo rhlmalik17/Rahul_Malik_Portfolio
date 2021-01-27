@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     height: 60%;
+    z-index: 2;
     min-height: fit-content;
 }
 
