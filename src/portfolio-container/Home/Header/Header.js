@@ -5,7 +5,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Header.css';
 
-const Header = () => {
+const Header = (props) => {
 
     /* STATES TO BE USED */
     const [selectedScreen, setSelectedScreen] = useState(0);
@@ -66,7 +66,7 @@ const Header = () => {
       }, [currentScreenSubscription]);
 
     return (
-        <div className="header-container">
+        <div className="header-container"  id={ props.id || ''}>
             <div className="header-parent">
                 <div className="header-hamburger" onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
                     <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />

@@ -6,8 +6,8 @@ import './Home.css';
 
 function Home(props) {
     return (
-        <div className="home-container" id={ props.id || ''}>
-            <Header />
+        <div className="home-container" >
+            <Header id={ props.id || ''} />
             <Profile />
             <Footer /> 
         </div>
