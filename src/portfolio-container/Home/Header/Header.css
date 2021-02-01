@@ -65,6 +65,7 @@
         opacity: 0;
         flex-direction: column;
         position: absolute;
+        z-index: 4;
         left: -100%;
         transition: all 1s ease-out;
         top: 0px;
