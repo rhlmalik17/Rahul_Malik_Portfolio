@@ -80,11 +80,11 @@ const Resume = (props) => {
     },
     {
       title: "Converse (Currently Ongoing)",
-      duration: { fromDate: "2020", toDate: "2020" },
+      duration: { fromDate: "2020", toDate: "2021" },
       description:
         "A messaging platform utilizing the functionality of Sockets I/O through REST API to provide realtime messaging experience.",
       subHeading:
-        "Technologies Used: Angular JS, Express JS, Socket IO & FireBase Realtime Database.",
+        "Technologies Used: React JS, Express JS, Socket IO & MongoDB.",
     },
   ];
 
